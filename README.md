@@ -1,7 +1,7 @@
 # Cake.AWS.CodeDeploy
 Cake Build addin for Amazon CodeDeploy
 
-[![Build status](https://ci.appveyor.com/api/projects/status/1x1hficb72giaan7?svg=true)](https://ci.appveyor.com/project/SharpeRAD/cake-aws-CodeDeploy)
+[![Build status](https://ci.appveyor.com/api/projects/status/fdmccfihkycqd0lj?svg=true)](https://ci.appveyor.com/project/SharpeRAD/cake-aws-codedeploy)
 
 [![cakebuild.net](https://img.shields.io/badge/WWW-cakebuild.net-blue.svg)](http://cakebuild.net/)
 
