@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+      <id>Cake.AWS.CodeDeploy</id>
+      <version>0.0.0</version>
+      <authors>Phillip Sharpe</authors>
+      <owners>Phillip Sharpe</owners>
+      <title>Cake.AWS.CodeDeploy</title>
+      <description>Cake Build addon for Amazon CodeDeploy.</description>
+      <summary>Amazon EC2 addon for cake build.</summary>
+      <licenseUrl>https://github.com/SharpeRAD/Cake.AWS.CodeDeploy/LICENSE</licenseUrl>
+      <projectUrl>https://github.com/SharpeRAD/Cake.AWS.CodeDeploy</projectUrl>
+      <iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-medium.png</iconUrl>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <copyright>Copyright (c) Phillip Sharpe 2015</copyright>
+      <releaseNotes>Initial Release</releaseNotes>
+      <tags>Cake Script Build Amazon CodeDeploy</tags>
+   
+       <dependencies>
+           <dependency id="Cake.Core" version="0.11.0" />
+           <dependency id="AWSSDK.Core" version="3.3.5" />
+           <dependency id="AWSSDK.CodeDeploy" version="3.3.1.3" />
+       </dependencies>
+   </metadata>
+
+   <files>
+      <file src="AWSSDK.Core.dll" target="lib/net45" />
+      <file src="AWSSDK.CodeDeploy.dll" target="lib/net45" />
+      <file src="Cake.AWS.CodeDeploy.dll" target="lib/net45" />
+      <file src="Cake.AWS.CodeDeploy.xml" target="lib/net45" />
+      <file src="LICENSE" />
+   </files>
+</package>
