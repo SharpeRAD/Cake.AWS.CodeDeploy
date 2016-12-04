@@ -119,6 +119,8 @@ namespace Cake.AWS.CodeDeploy
 
                     S3Location = new S3Location()
                     {
+                        BundleType = BundleType.Zip,
+
                         Bucket = settings.RevisionBucket,
                         Key = settings.RevisionKey,
                         Version = settings.RevisionVersion
