@@ -143,6 +143,57 @@ namespace Cake.AWS.CodeDeploy
                     return false;
                 }
             }
+        
+            /// <summary>
+            /// Registers with AWS CodeDeploy a revision for the specified application.
+            /// </summary>
+            /// <param name="applicationName">The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</param>
+            /// <param name="settings">The <see cref="DeploySettings"/> used during the request to AWS.</param>
+            public bool RegisterApplicationRevision(string applicationName, DeploySettings settings)
+            {
+                if (String.IsNullOrEmpty(applicationName))
+                {
+                    throw new ArgumentNullException("applicationName");
+                }
+
+
+
+                //Create Request
+                AmazonCodeDeployClient client = this.CreateClient(settings);
+                RegisterApplicationRevisionRequest request = new RegisterApplicationRevisionRequest();
+
+                request.ApplicationName = applicationName;
+
+                request.Revision = new RevisionLocation()
+                {
+                    RevisionType = RevisionLocationType.S3,
+
+                    S3Location = new S3Location()
+                    {
+                        BundleType = BundleType.Zip,
+
+                        Bucket = settings.RevisionBucket,
+                        Key = settings.RevisionKey,
+                        Version = settings.RevisionVersion
+                    }
+                };
+
+
+
+                //Check Response
+                RegisterApplicationRevisionResponse response = client.RegisterApplicationRevision(request);
+
+                if (response.HttpStatusCode == HttpStatusCode.OK)
+                {
+                    _Log.Verbose("Successfully deployed application '{0}'", applicationName);
+                    return true;
+                }
+                else
+                {
+                    _Log.Error("Failed to deploy application '{0}'", applicationName);
+                    return false;
+                }
+            }
         #endregion
     }
 }

@@ -19,7 +19,8 @@ namespace Cake.AWS.CodeDeploy
             public DeploySettings()
             {
                 this.Region = RegionEndpoint.EUWest1;
-                this.RevisionVersion = "";
+
+                this.RevisionVersion = null;
             }
         #endregion
 
