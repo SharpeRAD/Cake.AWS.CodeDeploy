@@ -74,9 +74,15 @@ A complete Cake example can be found [here](https://github.com/SharpeRAD/Cake.AW
 
 
 
+## TroubleShooting
+
+* Please be aware of the breaking changes that occurred with the release of [Cake v0.22.0](https://cakebuild.net/blog/2017/09/cake-v0.22.0-released), you will need to upgrade Cake in order to use Cake.AWS.CodeDeploy v0.1.0 or above.
+
+
+
 ## Plays well with
 
-If your deploying websites to IIS its worth checking out [Cake.IIS](https://github.com/SharpeRAD/Cake.IIS) or if your deploying windows services check out [Cake.Services](https://github.com/SharpeRAD/Cake.Services).
+If your deploying from S3 its worth checking out [Cake.AWS.S3](https://github.com/SharpeRAD/Cake.AWS.S3), if your deploying websites to IIS its worth checking out [Cake.IIS](https://github.com/SharpeRAD/Cake.IIS) or if your deploying windows services check out [Cake.Services](https://github.com/SharpeRAD/Cake.Services).
 
 If your looking for a way to trigger cake tasks based on windows events or at scheduled intervals then check out [CakeBoss](https://github.com/SharpeRAD/CakeBoss).
 

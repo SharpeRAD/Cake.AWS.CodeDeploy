@@ -1,10 +1,10 @@
 ﻿#region Using Statements
-    using System;
+using System;
 
-    using Cake.Core;
+using Cake.Core;
 
-    using Amazon;
-    using Amazon.Runtime;
+using Amazon;
+using Amazon.Runtime;
 #endregion
 
 
@@ -30,15 +30,21 @@ namespace Cake.AWS.CodeDeploy
 
             DeploySettings settings = new DeploySettings();
 
+
+
             //AWS Fallback
             AWSCredentials creds = FallbackCredentialsFactory.GetCredentials();
+
             if (creds != null)
             {
                 settings.Credentials = creds;
             }
 
+
+
             //Environment Variables
             string region = environment.GetEnvironmentVariable("AWS_REGION");
+
             if (!String.IsNullOrEmpty(region))
             {
                 settings.Region = RegionEndpoint.GetBySystemName(region);

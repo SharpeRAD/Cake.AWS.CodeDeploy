@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AssemblyTitle>Cake.AWS.CodeDeploy</AssemblyTitle>
+        <AssemblyName>Cake.AWS.CodeDeploy</AssemblyName>
+        <PackageId>Cake.AWS.CodeDeploy</PackageId>
+        <OutputType>Library</OutputType>
+
+        <TargetFrameworks>net461;</TargetFrameworks>
+
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+        <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+        <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+        <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <DocumentationFile>bin\Debug\net461\Cake.AWS.CodeDeploy.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Cake.Core" Version="0.22.0" />
+
+        <PackageReference Include="AWSSDK.Core" Version="3.3.17.9" />
+        <PackageReference Include="AWSSDK.CodeDeploy" Version="3.3.7" />
+    </ItemGroup>
+</Project>

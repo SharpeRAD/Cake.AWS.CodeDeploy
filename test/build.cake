@@ -33,7 +33,7 @@ Task("Create-Deployment")
     .Description("Deploys an application revision via AWS CodeDeploy.")
     .Does(() =>
 {
-    var settings = Context.CreateDeploySettings()
+    var settings = Context.CreateDeploySettings();
 
     settings.RevisionBucket = "company-deployments";
     settings.RevisionKey = "AwesomeApp.zip";

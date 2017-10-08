@@ -1,7 +1,7 @@
 ﻿#region Using Statements
-    using System;
+using System;
 
-    using Cake.Core;
+using Cake.Core;
 #endregion
 
 
