@@ -5,7 +5,7 @@
         <PackageId>Cake.AWS.CodeDeploy</PackageId>
         <OutputType>Library</OutputType>
 
-        <TargetFrameworks>net461;</TargetFrameworks>
+        <TargetFrameworks>net46;netstandard1.6;</TargetFrameworks>
 
         <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
         <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>

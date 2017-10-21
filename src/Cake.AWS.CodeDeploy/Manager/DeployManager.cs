@@ -1,6 +1,8 @@
 ﻿#region Using Statements
 using System;
 using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
 
 using Cake.Core;
 using Cake.Core.Diagnostics;
@@ -93,7 +95,8 @@ namespace Cake.AWS.CodeDeploy
         /// <param name="applicationName">The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</param>
         /// <param name="deploymentGroup">The name of the deployment group.</param>
         /// <param name="settings">The <see cref="DeploySettings"/> used during the request to AWS.</param>
-        public bool CreateDeployment(string applicationName, string deploymentGroup, DeploySettings settings)
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        public async Task<bool> CreateDeployment(string applicationName, string deploymentGroup, DeploySettings settings, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (String.IsNullOrEmpty(applicationName))
             {
@@ -130,7 +133,7 @@ namespace Cake.AWS.CodeDeploy
 
 
             //Check Response
-            CreateDeploymentResponse response = client.CreateDeployment(request);
+            CreateDeploymentResponse response = await client.CreateDeploymentAsync(request, cancellationToken);
 
             if (response.HttpStatusCode == HttpStatusCode.OK)
             {
@@ -143,13 +146,14 @@ namespace Cake.AWS.CodeDeploy
                 return false;
             }
         }
-        
+
         /// <summary>
         /// Registers with AWS CodeDeploy a revision for the specified application.
         /// </summary>
         /// <param name="applicationName">The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</param>
         /// <param name="settings">The <see cref="DeploySettings"/> used during the request to AWS.</param>
-        public bool RegisterApplicationRevision(string applicationName, DeploySettings settings)
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        public async Task<bool> RegisterApplicationRevision(string applicationName, DeploySettings settings, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (String.IsNullOrEmpty(applicationName))
             {
@@ -181,7 +185,7 @@ namespace Cake.AWS.CodeDeploy
 
 
             //Check Response
-            RegisterApplicationRevisionResponse response = client.RegisterApplicationRevision(request);
+            RegisterApplicationRevisionResponse response = await client.RegisterApplicationRevisionAsync(request, cancellationToken);
 
             if (response.HttpStatusCode == HttpStatusCode.OK)
             {

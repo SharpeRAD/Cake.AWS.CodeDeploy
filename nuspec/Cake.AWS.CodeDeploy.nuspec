@@ -10,7 +10,7 @@
         <summary>Amazon EC2 addon for cake build.</summary>
         <licenseUrl>https://github.com/SharpeRAD/Cake.AWS.CodeDeploy/LICENSE</licenseUrl>
         <projectUrl>https://github.com/SharpeRAD/Cake.AWS.CodeDeploy</projectUrl>
-        <iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-medium.png</iconUrl>
+        <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <copyright>Copyright (c) Phillip Sharpe 2015</copyright>
         <releaseNotes>Initial Release</releaseNotes>
@@ -24,11 +24,16 @@
     </metadata>
 
     <files>
-        <file src="net461/Cake.AWS.CodeDeploy.dll" target="lib/net461" />
-        <file src="net461/Cake.AWS.CodeDeploy.xml" target="lib/net461" />
+        <file src="net46/AWSSDK.Core.dll" target="lib/net46" />
+        <file src="net46/AWSSDK.CodeDeploy.dll" target="lib/net46" />
+        
+        <file src="net46/Cake.AWS.CodeDeploy.dll" target="lib/net46" />
+        <file src="net46/Cake.AWS.CodeDeploy.xml" target="lib/net46" />
+        <file src="net46/Cake.AWS.CodeDeploy.pdb" target="lib/net46" />
 
-        <file src="net461/AWSSDK.Core.dll" target="lib/net461" />
-        <file src="net461/AWSSDK.CodeDeploy.dll" target="lib/net461" />
+        <file src="netstandard1.6/Cake.AWS.CodeDeploy.dll" target="lib/netstandard1.6" />
+        <file src="netstandard1.6/Cake.AWS.CodeDeploy.xml" target="lib/netstandard1.6" />
+        <file src="netstandard1.6/Cake.AWS.CodeDeploy.pdb" target="lib/netstandard1.6" />
 
         <file src="LICENSE" />
     </files>

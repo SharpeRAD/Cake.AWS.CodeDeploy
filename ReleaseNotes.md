@@ -1,3 +1,9 @@
+### New in 0.1.1 (Released 2017/10/08)
+* [Improvement] Update cake contrib icon
+* [Improvement] Drop framework down to net46
+* [Improvement] Add Support for netStandard1.6
+* [Improvement] Switch to async tasks
+
 ### New in 0.1.0 (Released 2017/10/08)
 * [Improvement] Updated Cake reference to v0.22.0
 * [Improvement] Moved to net461 for Cake compatibility
