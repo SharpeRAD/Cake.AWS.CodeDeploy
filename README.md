@@ -53,14 +53,14 @@ or directly in your build script via a cake addin directive:
 
 Task("Create-Deployment")
     .Description("Deploys an application revision via AWS CodeDeploy.")
-    .Does(() =>
+    .Does(async () =>
 {
     var settings = Context.CreateDeploySettings()
 
     settings.RevisionBucket = "company-deployments";
     settings.RevisionKey = "AwesomeApp.zip";
 
-    CreateDeployment("MyApplication", "MyGroup", settings);
+    await CreateDeployment("MyApplication", "MyGroup", settings);
 });
 
 RunTarget("Create-Deployment");
