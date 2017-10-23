@@ -1,3 +1,6 @@
+### New in 0.1.2 (Released 2017/10/23)
+* [Improvement] Rename Revision properties to S3
+
 ### New in 0.1.1 (Released 2017/10/08)
 * [Improvement] Update cake contrib icon
 * [Improvement] Drop framework down to net46

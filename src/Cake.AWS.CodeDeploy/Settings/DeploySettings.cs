@@ -20,7 +20,7 @@ namespace Cake.AWS.CodeDeploy
         {
             this.Region = RegionEndpoint.EUWest1;
 
-            this.RevisionVersion = null;
+            this.S3Version = null;
         }
         #endregion
 
@@ -53,17 +53,17 @@ namespace Cake.AWS.CodeDeploy
         /// <summary>
         /// The name of the Amazon S3 bucket where the application revision is stored.
         /// </summary>
-        public string RevisionBucket { get; set; }
+        public string S3Bucket { get; set; }
         
         /// <summary>
         /// The name of the Amazon S3 object that represents the bundled artifacts for the application revision.
         /// </summary>
-        public string RevisionKey { get; set; }
+        public string S3Key { get; set; }
         
         /// <summary>
         /// A specific version of the Amazon S3 object that represents the bundled artifacts for the application revision.
         /// </summary>
-        public string RevisionVersion { get; set; }
+        public string S3Version { get; set; }
         #endregion
     }
 }

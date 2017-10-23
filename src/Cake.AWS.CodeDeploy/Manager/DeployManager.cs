@@ -109,7 +109,7 @@ namespace Cake.AWS.CodeDeploy
 
 
 
-            //Create Request
+            // Create Request
             AmazonCodeDeployClient client = this.CreateClient(settings);
             CreateDeploymentRequest request = new CreateDeploymentRequest();
 
@@ -124,15 +124,15 @@ namespace Cake.AWS.CodeDeploy
                 {
                     BundleType = BundleType.Zip,
 
-                    Bucket = settings.RevisionBucket,
-                    Key = settings.RevisionKey,
-                    Version = settings.RevisionVersion
+                    Bucket = settings.S3Bucket,
+                    Key = settings.S3Key,
+                    Version = settings.S3Version
                 }
             };
 
 
 
-            //Check Response
+            // Check Response
             CreateDeploymentResponse response = await client.CreateDeploymentAsync(request, cancellationToken);
 
             if (response.HttpStatusCode == HttpStatusCode.OK)
@@ -162,7 +162,7 @@ namespace Cake.AWS.CodeDeploy
 
 
 
-            //Create Request
+            // Create Request
             AmazonCodeDeployClient client = this.CreateClient(settings);
             RegisterApplicationRevisionRequest request = new RegisterApplicationRevisionRequest();
 
@@ -176,15 +176,15 @@ namespace Cake.AWS.CodeDeploy
                 {
                     BundleType = BundleType.Zip,
 
-                    Bucket = settings.RevisionBucket,
-                    Key = settings.RevisionKey,
-                    Version = settings.RevisionVersion
+                    Bucket = settings.S3Bucket,
+                    Key = settings.S3Key,
+                    Version = settings.S3Version
                 }
             };
 
 
 
-            //Check Response
+            // Check Response
             RegisterApplicationRevisionResponse response = await client.RegisterApplicationRevisionAsync(request, cancellationToken);
 
             if (response.HttpStatusCode == HttpStatusCode.OK)

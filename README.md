@@ -57,8 +57,8 @@ Task("Create-Deployment")
 {
     var settings = Context.CreateDeploySettings()
 
-    settings.RevisionBucket = "company-deployments";
-    settings.RevisionKey = "AwesomeApp.zip";
+    settings.S3Bucket = "company-deployments";
+    settings.S3Key = "AwesomeApp.zip";
 
     await CreateDeployment("MyApplication", "MyGroup", settings);
 });
