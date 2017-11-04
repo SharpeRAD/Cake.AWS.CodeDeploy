@@ -34,6 +34,7 @@
         <file src="netstandard1.6/Cake.AWS.CodeDeploy.dll" target="lib/netstandard1.6" />
         <file src="netstandard1.6/Cake.AWS.CodeDeploy.xml" target="lib/netstandard1.6" />
         <file src="netstandard1.6/Cake.AWS.CodeDeploy.pdb" target="lib/netstandard1.6" />
+        <file src="netstandard1.6/Cake.AWS.CodeDeploy.deps.json" target="lib/netstandard1.6" />
 
         <file src="LICENSE" />
     </files>

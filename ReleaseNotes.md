@@ -1,3 +1,6 @@
+### New in 0.1.3 (Released 2017/11/04)
+* [Improvement] Missing deps from Nuspec
+
 ### New in 0.1.2 (Released 2017/10/23)
 * [Improvement] Rename Revision properties to S3
 
