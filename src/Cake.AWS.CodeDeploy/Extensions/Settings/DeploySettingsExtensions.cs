@@ -16,7 +16,7 @@ namespace Cake.AWS.CodeDeploy
         /// <summary>
         /// Specifies the AWS Access Key to use as credentials.
         /// </summary>
-        /// <param name="settings">The LoadBalancing settings.</param>
+        /// <param name="settings">The CodeDeploy settings.</param>
         /// <param name="key">The AWS Access Key</param>
         /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
         public static DeploySettings SetAccessKey(this DeploySettings settings, string key)
@@ -33,7 +33,7 @@ namespace Cake.AWS.CodeDeploy
         /// <summary>
         /// Specifies the AWS Secret Key to use as credentials.
         /// </summary>
-        /// <param name="settings">The LoadBalancing settings.</param>
+        /// <param name="settings">The CodeDeploy settings.</param>
         /// <param name="key">The AWS Secret Key</param>
         /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
         public static DeploySettings SetSecretKey(this DeploySettings settings, string key)
@@ -47,12 +47,33 @@ namespace Cake.AWS.CodeDeploy
             return settings;
         }
 
+        /// <summary>
+        /// Specifies the AWS Session Token to use as credentials.
+        /// </summary>
+        /// <param name="settings">The CodeDeploy settings.</param>
+        /// <param name="token">The AWS Session Token.</param>
+        /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
+        public static DeploySettings SetSessionToken(this DeploySettings settings, string token)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
+            if (string.IsNullOrEmpty(token))
+            {
+                throw new ArgumentNullException("token");
+            }
+
+            settings.SessionToken = token;
+            return settings;
+        }
+
 
 
         /// <summary>
         /// Specifies the endpoints available to AWS clients.
         /// </summary>
-        /// <param name="settings">The LoadBalancing settings.</param>
+        /// <param name="settings">The CodeDeploy settings.</param>
         /// <param name="region">The endpoints available to AWS clients.</param>
         /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
         public static DeploySettings SetRegion(this DeploySettings settings, string region)
@@ -69,7 +90,7 @@ namespace Cake.AWS.CodeDeploy
         /// <summary>
         /// Specifies the endpoints available to AWS clients.
         /// </summary>
-        /// <param name="settings">The LoadBalancing settings.</param>
+        /// <param name="settings">The CodeDeploy settings.</param>
         /// <param name="region">The endpoints available to AWS clients.</param>
         /// <returns>The same <see cref="DeploySettings"/> instance so that multiple calls can be chained.</returns>
         public static DeploySettings SetRegion(this DeploySettings settings, RegionEndpoint region)

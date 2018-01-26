@@ -1,3 +1,6 @@
+### New in 0.1.4 (Released 2018/01/26)
+* [Improvemen] Added SessionToken
+
 ### New in 0.1.3 (Released 2017/11/04)
 * [Improvement] Missing deps from Nuspec
 
