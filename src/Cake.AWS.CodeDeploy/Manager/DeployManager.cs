@@ -79,7 +79,14 @@ namespace Cake.AWS.CodeDeploy
                     throw new ArgumentNullException("settings.SecretKey");
                 }
 
-                return new AmazonCodeDeployClient(settings.AccessKey, settings.SecretKey, settings.Region);
+                if (!String.IsNullOrEmpty(settings.SessionToken))
+                {
+                    return new AmazonCodeDeployClient(settings.AccessKey, settings.SecretKey, settings.SessionToken, settings.Region);
+                }
+                else
+                {
+                    return new AmazonCodeDeployClient(settings.AccessKey, settings.SecretKey, settings.Region);
+                }
             }
             else
             {
