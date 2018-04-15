@@ -1,3 +1,6 @@
+### New in 0.1.6 (Released 2018/04/15)
+* [Improvement] Update to Cake.Core v0.26
+
 ### New in 0.1.5 (Released 2018/01/26)
 * [Bug] Didnt include session token to client constructor
 
