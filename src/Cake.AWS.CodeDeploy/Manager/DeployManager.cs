@@ -155,6 +155,46 @@ namespace Cake.AWS.CodeDeploy
         }
 
         /// <summary>
+        /// Gets the deployment info
+        /// </summary>
+        /// <param name="deploymentID">A deployment ID associated with the applicable IAM user or AWS account.</param>
+        /// <param name="settings">The <see cref="DeploySettings"/> used during the request to AWS.</param>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        public async Task<DeploymentInfo> GetDeploymentInfo(string deploymentID, DeploySettings settings, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (String.IsNullOrEmpty(deploymentID))
+            {
+                throw new ArgumentNullException("deploymentID");
+            }
+
+
+
+            // Create Request
+            AmazonCodeDeployClient client = this.CreateClient(settings);
+            GetDeploymentRequest request = new GetDeploymentRequest();
+
+            request.DeploymentId = deploymentID;
+
+
+
+            // Check Response
+            GetDeploymentResponse response = await client.GetDeploymentAsync(request, cancellationToken);
+
+            if (response.HttpStatusCode == HttpStatusCode.OK)
+            {
+                _Log.Verbose("Successfully found deployment info '{0}'", deploymentID);
+                return response.DeploymentInfo;
+            }
+            else
+            {
+                _Log.Error("Failed to get deployment info '{0}'", deploymentID);
+                return null;
+            }
+        }
+
+
+
+        /// <summary>
         /// Registers with AWS CodeDeploy a revision for the specified application.
         /// </summary>
         /// <param name="applicationName">The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</param>

@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 
 using Cake.Core;
 using Cake.Core.Annotations;
+
+using Amazon.CodeDeploy.Model;
 #endregion
 
 
@@ -52,6 +54,35 @@ namespace Cake.AWS.CodeDeploy
         public static async Task<bool> CreateDeployment(this ICakeContext context, string applicationName, string deploymentGroup, DeploySettings settings, CancellationToken cancellationToken)
         {
             return await context.CreateManager().CreateDeployment(applicationName, deploymentGroup, settings, cancellationToken);
+        }
+
+
+
+        /// <summary>
+        /// Deploys an application revision through the specified deployment group.
+        /// </summary>
+        /// <param name="context">The cake context.</param>
+        /// <param name="deploymentID">A deployment ID associated with the applicable IAM user or AWS account.</param>
+        /// <param name="settings">The <see cref="DeploySettings"/> used during the request to AWS.</param>
+        [CakeMethodAlias]
+        [CakeAliasCategory("EC2")]
+        public static async Task<DeploymentInfo> GetDeploymentInfo(this ICakeContext context, string deploymentID, DeploySettings settings)
+        {
+            return await context.CreateManager().GetDeploymentInfo(deploymentID, settings);
+        }
+
+        /// <summary>
+        /// Deploys an application revision through the specified deployment group.
+        /// </summary>
+        /// <param name="context">The cake context.</param>
+        /// <param name="deploymentID">A deployment ID associated with the applicable IAM user or AWS account.</param>
+        /// <param name="settings">The <see cref="DeploySettings"/> used during the request to AWS.</param>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        [CakeMethodAlias]
+        [CakeAliasCategory("EC2")]
+        public static async Task<DeploymentInfo> GetDeploymentInfo(this ICakeContext context, string deploymentID, DeploySettings settings, CancellationToken cancellationToken)
+        {
+            return await context.CreateManager().GetDeploymentInfo(deploymentID, settings, cancellationToken);
         }
 
 
