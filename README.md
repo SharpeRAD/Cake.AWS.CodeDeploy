@@ -31,6 +31,7 @@ Cake Build addin for Amazon CodeDeploy
 ## Referencing
 
 [![NuGet Version](http://img.shields.io/nuget/v/Cake.AWS.CodeDeploy.svg?style=flat)](https://www.nuget.org/packages/Cake.AWS.CodeDeploy/)
+[![NuGet Downloads](http://img.shields.io/nuget/dt/Cake.AWS.CodeDeploy.svg?style=flat)](https://www.nuget.org/packages/Cake.AWS.CodeDeploy/)
 
 Cake.AWS.CodeDeploy is available as a nuget package from the package manager console:
 
